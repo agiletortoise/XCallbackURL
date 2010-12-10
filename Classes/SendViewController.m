@@ -81,12 +81,12 @@
 	urlString = [urlString stringByAppendingString:@"?"];
 	
 	if ([[callbackField text] length] > 0) {
-		urlString = [urlString stringByAppendingString:@"x-callback="];
+		urlString = [urlString stringByAppendingString:@"x-success="];
 		urlString = [urlString stringByAppendingString:[self encodeString:[callbackField text]]];
 		urlString = [urlString stringByAppendingString:@"&"];
 	}
 	if ([[errorCallbackField text] length] > 0) {
-		urlString = [urlString stringByAppendingString:@"x-callback="];
+		urlString = [urlString stringByAppendingString:@"x-error="];
 		urlString = [urlString stringByAppendingString:[self encodeString:[errorCallbackField text]]];
 		urlString = [urlString stringByAppendingString:@"&"];
 	}	
