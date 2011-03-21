@@ -12,7 +12,6 @@
 @interface SendViewController : UIViewController <UITextFieldDelegate> {
 	IBOutlet UITextField *schemeField;
 	IBOutlet UITextField *hostField;
-	IBOutlet UITextField *versionField;
 	IBOutlet UITextField *actionField;
 	IBOutlet UITextField *parametersField;
 	IBOutlet UITextField *callbackField;

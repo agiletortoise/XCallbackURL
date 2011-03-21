@@ -34,6 +34,8 @@
     return YES;
 }
 
+/* This method is used to handle incoming URLs
+ */
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
 	NSLog(@"%@", [url absoluteString]);
@@ -41,7 +43,8 @@
 	return YES;
 }
 
-// Deprecated forwarding method
+/* Deprecated forwarding method implemented for backward compatibility with iOS < 4.0
+ */
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
 	return [self application:application openURL:url sourceApplication:@"com.unknown.unknown" annotation:nil];

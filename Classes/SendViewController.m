@@ -48,7 +48,6 @@
 {
 	if( [[schemeField text] length] == 0 ||
 	    [[hostField text] length] == 0 ||
-	    [[versionField text] length] == 0 ||
 	    [[actionField text] length] == 0 )
 	{
 		return NO;
@@ -75,9 +74,11 @@
 	urlString = [urlString stringByAppendingString:@"://"];
 	urlString = [urlString stringByAppendingString:[hostField text]];
 	urlString = [urlString stringByAppendingString:@"/"];
-	urlString = [urlString stringByAppendingString:[versionField text]];
-	urlString = [urlString stringByAppendingString:@"/"];
-	urlString = [urlString stringByAppendingString:[actionField text]];
+	// 2011.03.21 by GP - no longer requiring version
+    //urlString = [urlString stringByAppendingString:[versionField text]];
+	//urlString = [urlString stringByAppendingString:@"/"];
+	// END
+    urlString = [urlString stringByAppendingString:[actionField text]];
 	urlString = [urlString stringByAppendingString:@"?"];
 	
 	if ([[callbackField text] length] > 0) {
@@ -141,7 +142,6 @@
     [super viewDidUnload];
     [schemeField release];
 	[hostField release];
-	[versionField release];
 	[actionField release];
 	[parametersField release];
 	[callbackField release];
