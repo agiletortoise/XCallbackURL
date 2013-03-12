@@ -20,6 +20,7 @@
 		376F81AF129D9C510097CB72 /* ReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376F81AD129D9C510097CB72 /* ReceiveViewController.m */; };
 		376F81B0129D9C510097CB72 /* ReceiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 376F81AE129D9C510097CB72 /* ReceiveViewController.xib */; };
 		3786E36912B2B586006352ED /* xcallbackurl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3786E36812B2B586006352ED /* xcallbackurl.png */; };
+		F83F44B516EF28DF00C7D178 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F83F44B416EF28DF00C7D178 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		376F81AE129D9C510097CB72 /* ReceiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ReceiveViewController.xib; path = Classes/ReceiveViewController.xib; sourceTree = "<group>"; };
 		3786E36812B2B586006352ED /* xcallbackurl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xcallbackurl.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* XCallbackURL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "XCallbackURL-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		F83F44B416EF28DF00C7D178 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				F83F44B416EF28DF00C7D178 /* Default-568h@2x.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -179,6 +182,7 @@
 				3706682C129DB914007414FD /* send.png in Resources */,
 				37066830129DB93A007414FD /* receive.png in Resources */,
 				3786E36912B2B586006352ED /* xcallbackurl.png in Resources */,
+				F83F44B516EF28DF00C7D178 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
