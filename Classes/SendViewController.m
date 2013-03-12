@@ -107,9 +107,6 @@
 	else {
 		NSLog(@"Unable to open url");
 	}
-	
-	[url release];
-	[urlString release];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
