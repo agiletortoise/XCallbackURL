@@ -16,6 +16,7 @@
 	IBOutlet UITextField *parametersField;
 	IBOutlet UITextField *callbackField;
 	IBOutlet UITextField *errorCallbackField;	
+	IBOutlet UITextField *cancelCallbackField;
 	IBOutlet UITextField *sourceField;
 }
 

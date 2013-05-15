@@ -12,14 +12,13 @@
 @implementation SendViewController
 
 - (id)init {
-	[super initWithNibName:nil bundle:nil];
+	if (!(self = [super initWithNibName:nil bundle:nil])) return nil;
 	
 	UITabBarItem *tbi = [self tabBarItem];
 	[tbi setTitle:@"Send URL"];
 	
 	UIImage *image = [UIImage imageNamed:@"send.png"];
 	[tbi setImage:image];
-	[image release];
 	
 	return self;
 }
@@ -36,12 +35,12 @@
 
 - (NSString *)encodeString:(NSString *)str
 {
-	return (NSString *)CFURLCreateStringByAddingPercentEscapes(
+	return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
 															   NULL,
 															   (CFStringRef)str,
 															   NULL,
 															   (CFStringRef)@"!*'();:@&=+$,/?%#[]",
-															   kCFStringEncodingUTF8 );
+															   kCFStringEncodingUTF8 ));
 }
 
 - (BOOL)canOpenURL
@@ -65,7 +64,6 @@
 								  cancelButtonTitle:@"OK"
 								  otherButtonTitles:nil];
 		[alertView show];
-		[alertView release];
 		return;
 	}
 	
@@ -90,12 +88,18 @@
 		urlString = [urlString stringByAppendingString:@"x-error="];
 		urlString = [urlString stringByAppendingString:[self encodeString:[errorCallbackField text]]];
 		urlString = [urlString stringByAppendingString:@"&"];
-	}	
+	}
+    if ([[cancelCallbackField text] length] > 0) {
+		urlString = [urlString stringByAppendingString:@"x-cancel="];
+		urlString = [urlString stringByAppendingString:[self encodeString:[cancelCallbackField text]]];
+		urlString = [urlString stringByAppendingString:@"&"];
+	}
 	if ([[sourceField text] length] > 0) {
 		urlString = [urlString stringByAppendingString:@"x-source="];
 		urlString = [urlString stringByAppendingString:[self encodeString:[sourceField text]]];
 		urlString = [urlString stringByAppendingString:@"&"];
 	}
+    
     urlString = [urlString stringByAppendingString:[parametersField text]];
 	
 	
@@ -108,8 +112,6 @@
 		NSLog(@"Unable to open url");
 	}
 	
-	[url release];
-	[urlString release];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -140,19 +142,9 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    [schemeField release];
-	[hostField release];
-	[actionField release];
-	[parametersField release];
-	[callbackField release];
-	[errorCallbackField release];
-	[sourceField release];
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

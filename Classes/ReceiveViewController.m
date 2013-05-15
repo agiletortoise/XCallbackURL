@@ -12,14 +12,13 @@
 
 - (id)init 
 {
-	[super initWithNibName:nil bundle:nil];
+	if (!(self = [super initWithNibName:nil bundle:nil])) return nil;
 	
 	UITabBarItem *tbi = [self tabBarItem];
 	[tbi setTitle:@"Receive URL"];
 
 	UIImage *image = [UIImage imageNamed:@"receive.png"];
 	[tbi setImage:image];
-	[image release];
 	
 	return self;
 }
@@ -66,9 +65,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end
