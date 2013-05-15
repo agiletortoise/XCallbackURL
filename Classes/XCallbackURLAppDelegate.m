@@ -99,13 +99,6 @@
 }
 
 
-- (void)dealloc {
-	[sendView release];
-	[receiveView release];
-	[tabBarController release];
-    [window release];
-    [super dealloc];
-}
 
 
 @end
