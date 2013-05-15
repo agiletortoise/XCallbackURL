@@ -90,12 +90,18 @@
 		urlString = [urlString stringByAppendingString:@"x-error="];
 		urlString = [urlString stringByAppendingString:[self encodeString:[errorCallbackField text]]];
 		urlString = [urlString stringByAppendingString:@"&"];
-	}	
+	}
+    if ([[cancelCallbackField text] length] > 0) {
+		urlString = [urlString stringByAppendingString:@"x-cancel="];
+		urlString = [urlString stringByAppendingString:[self encodeString:[cancelCallbackField text]]];
+		urlString = [urlString stringByAppendingString:@"&"];
+	}
 	if ([[sourceField text] length] > 0) {
 		urlString = [urlString stringByAppendingString:@"x-source="];
 		urlString = [urlString stringByAppendingString:[self encodeString:[sourceField text]]];
 		urlString = [urlString stringByAppendingString:@"&"];
 	}
+    
     urlString = [urlString stringByAppendingString:[parametersField text]];
 	
 	
